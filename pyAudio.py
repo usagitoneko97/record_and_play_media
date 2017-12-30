@@ -39,8 +39,8 @@ def detect_threeshold(threeshold):
 
 
 if __name__ == '__main__':
-    print("started \n")
-    threeshold = int(sys.argv[1])
-    detect_threeshold(threeshold=threeshold)
-    print("maximum amount of threeshold %s reached, program will now exit" % sys.argv[1])
-    videoPlaying.play_video(file_name=sys.argv[2])
+    threeshold = input("enter the recording threeshold\n")
+    file_name = input("enter the file name to play\n")
+    detect_threeshold(threeshold=int(threeshold))
+    print("maximum amount of threeshold %s reached, program will now exit" % threeshold)
+    videoPlaying.play_video(file_name=file_name)

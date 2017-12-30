@@ -1,2 +1,6 @@
 build/
 dist/
+opencv_ffmpeg330.dll
+.idea/
+__pycache__/
+resource/
