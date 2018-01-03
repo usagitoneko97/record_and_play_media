@@ -44,6 +44,7 @@ def detect_threshold(threshold, stream):
     data = stream.read(CHUNK)
     snd_data = array('h', data)
 
+    print("snd data : []".format(snd_data[0]))
     if snd_data[0] > threshold:
         return True
     return False

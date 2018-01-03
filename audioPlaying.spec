@@ -3,10 +3,10 @@
 block_cipher = None
 
 
-a = Analysis(['audioPlaying.py'],
+a = Analysis(['main.py'],
              pathex=['C:\\Users\\User_Lenovo\\PycharmProjects\\pyaudioTest'],
              binaries=[],
-             datas=[],
+             datas=['opencv_ffmpeg330.dll', '.'],
              hiddenimports=[],
              hookspath=[],
              runtime_hooks=[],
@@ -21,7 +21,7 @@ exe = EXE(pyz,
           a.binaries,
           a.zipfiles,
           a.datas,
-          name='audioPlaying',
+          name='Blow a wish',
           debug=False,
           strip=False,
           upx=True,

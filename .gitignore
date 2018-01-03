@@ -5,3 +5,4 @@ opencv_ffmpeg330.dll
 __pycache__/
 resource/
 !dist/pyAudio.exe
+*.mp4

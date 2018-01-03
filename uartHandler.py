@@ -7,14 +7,20 @@ def open_port(port):
         ser = serial.Serial(port, baudrate=BAUD_RATE, parity=serial.PARITY_NONE,
                             stopbits=serial.STOPBITS_ONE, bytesize=serial.EIGHTBITS)
         time.sleep(2)
-        return ser
+        return True, ser
     except serial.SerialException:
         return False
 
 
-def sendSignal(ser):
+def sendSignalStart(ser):
     try:
         ser.write(b'g')
-        ser.close()
+
+    except serial.SerialException:
+        return False
+
+def sendSignalStop(ser):
+    try:
+        ser.write(b's')
     except serial.SerialException:
         return False

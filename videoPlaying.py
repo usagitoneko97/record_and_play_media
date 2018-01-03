@@ -10,6 +10,7 @@ retries_num = 0
 timerFlag = 0
 
 def play_frame(file_name, threshold, stream, p):
+    global flag
     global timerFlag
     retries_num = 0
     global timerFlag
@@ -24,6 +25,7 @@ def play_frame(file_name, threshold, stream, p):
             break
 
         if flag == 1:
+            flag = 0
             break
         if timerFlag == 1:
             timerFlag = 0
@@ -31,7 +33,7 @@ def play_frame(file_name, threshold, stream, p):
             timer.start()
 
     timer.cancel()
-    pyAudio.close_stream(stream, p)
+    # pyAudio.close_stream(stream, p)
     cap.release()
     cv2.destroyAllWindows()
 
@@ -47,4 +49,5 @@ def threshold_frame(threshold, stream):
         retries_num = 0
 
     if retries_num > 6:
+        retries_num = 0
         flag = 1
